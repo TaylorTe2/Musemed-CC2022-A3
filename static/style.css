@@ -1,0 +1,158 @@
+body {
+    background: #191414;
+}
+
+h1, h2, h3, a, p, span, section, div{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+    color: #fff;
+  }
+
+h3 {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #fff;
+    background-color: #1DB954;
+    border-radius: 2rem;
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+#user a {
+    font-size: 12px;
+    padding: 5px 8px;
+}
+
+
+.prf-brn {
+    font-size: 12px;
+}
+
+.login-container {
+    height: 500px;
+    position: relative;
+}
+
+.vertical-container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.logreg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #73BA9B;
+    height: auto;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 2rem;
+}
+
+.login-fields {
+    display: block;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit], button {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px; 
+}
+
+#recommendations {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    #recommendations {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+#find-similar-outer {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding-left: 100px;
+}
+
+#find-similar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.recommendation-wrapper {
+    width: 600px;
+    display: flex;
+    background-image: linear-gradient(to bottom, rgba(2,3,13,1), rgba(2,3,13,0.4));
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.recent-wrapper {
+    min-width: 200px;
+    display: flex;
+    background-image: linear-gradient(to bottom, rgba(2,3,13,1), rgba(2,3,13,0.4));
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.name-and-artist {
+    width: 75%;
+}
+
+#pfprompt {
+    font-size: 10px;
+}
+
+.user-profile-image {
+    width: 90px;
+    min-height: 90px;
+    background-image: linear-gradient(to bottom, rgba(2,3,13,1), rgba(2,3,13,0.4));
+    display: flex;
+    justify-content: center;
+}
+
+.userinfo img, .user-profile-image img {
+    max-width: 80px;
+    height: auto;
+}
+
+.login-register-button {
+    font-size: 12px;
+    padding: 5px 8px;
+    text-align: center;
+}
+

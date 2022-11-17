@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="{{ url_for('static',filename='script.js') }}"></script>
+
+<head>
+    <title>home - Assignment 3 Cloud Computing s3873735</title>
+</head>
+
+<body>
+    <section id="user">
+        <div>
+            <h2>Welcome {{ username }}</h2>
+            <div class="user-profile-image">
+                <img src="{{ profile_image_url }}" alt="">
+            </div>
+            <a href="profile">profile</a>
+            <a class="prf-btn" href="authorize">Authorize with Spotify</a>
+            <a class="prf-btn" href="login">Click here to Logout.</a>
+            <br>
+            <br>
+        </div>
+    </section>
+
+    <div id="find-similar-outer">
+        <section id="find-similar">
+            <div>
+                <h3>Find Similar Songs</h3>
+                <form action="/addsong" id="link-form" method="POST">
+                    <p id="soyl">Spotify Link</p>
+                    <button id="spotify" onclick="displaySpotifyForm()">Spotify</button>
+                    <!-- <button id="youtube" onclick="displayYoutubeForm()">Youtube</button> -->
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <section id="recommendations">
+        <div>
+            <h3>Latest Recommendations: </h3>
+            {% for recommendation in recommendations %}
+            <div class="recommendation-wrapper">
+                <div class="song-image">
+                    <img src="{{ recommendation['image_url'] }}" alt="album image for the song">
+                </div>
+                <div class="name-and-artist">
+                    {{ recommendation['name'] }} <br> <i>{{ recommendation['artist'] }}</i>
+                </div>
+                <div class="song-link">
+                    <a href="{{ recommendation['uri'] }}" target="_blank"><i class="fa fa-play"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div>
+            <h3>Recently Listed: </h3>
+            {% for search in search_list %}
+            <div>
+                <div class="recent-wrapper">
+                    <div class="name-and-artist">
+                        {{ search['track_name'] }} <br> <i>{{ search['artist_name'] }}</i>
+                        <br>
+                    </div>
+                    <div class="song-link"></div>
+                    <a href="{{ search['track_link'] }}" target="_blank"><i class="fa fa-play"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+
+</html>

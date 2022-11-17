@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Your Profile!</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+    <section class="myProfile">
+        <div class="userinfo">
+            <h2>Your Profile</h2>
+            <a href="/home">Back to Home</a>
+            <p>Welcome {{ username }}</p>
+            <div class="user-profile-image">
+                <img src="{{ profile_image_url }}" alt="">
+            </div>
+            <br>
+            <p>This section is experimental. From this section you are able to <br>
+                upload a profile image that may be present on the home screen. <br><br>
+            </p>
+        </div>
+        <div class="card" style="width:400px">
+            <div id="uploadImage">
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" value="file">
+                    <p id="pfprompt">Choose a file to upload it to our storage buckets (jpg only)</p>
+                    <hr>
+                    <input type="submit" name="upload" value="Upload">
+                </form>
+                {{ msg }}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

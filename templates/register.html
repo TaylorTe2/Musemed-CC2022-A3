@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Register - Assignment 3 Cloud Computing s3873735</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="vertical-container">
+      <div class="logreg">
+        <h3>Register: </h3>
+        <div class="login-fields">
+          <form action="" method="POST">
+            <input type="text" placeholder="email" name="email" value="{{
+              request.form.email }}" required> <br>
+        </div>
+        <div class="login-fields">
+          <input type="text" placeholder="username" name="username" value="{{
+              request.form.username }}" required> <br>
+        </div>
+        <div class="login-fields">
+          <input type="password" placeholder="Password" name="password" value="{{
+              request.form.password }}" required>
+        </div>
+        <div class="login-fields">
+          <input type="submit" value="Register">
+        </div>
+        {% if error %}
+        <p class="error"><strong></strong> {{ error }}
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
